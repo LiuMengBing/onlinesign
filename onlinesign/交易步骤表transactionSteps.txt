@@ -1,0 +1,26 @@
+1、交易步骤表：
+交易步骤id transactionStepsID
+交易步骤名称 transactionStepsName
+步骤类型 transactionStepsType
+步骤排序 transactionStepsOrder
+计划天数 planDays
+超时提醒 overtimeDays
+是否短信通知 isSMS
+创建时间 createTime
+创建人 creator
+更新时间 updateTime
+更新人 updator
+是否删除 isDelete
+步骤附属信息json transactionStepsAttach
+	（附属信息ID attachID
+	附属信息名称 attachName
+	附属信息排序 attachOrder
+	附属信息类型 attachType
+	是否必填） isNecessary
+
+2、交易步骤类型（数据字典）：
+步骤类型 transactionStepsType
+负责职务 dutyType
+步骤类型排序 StepsTypeOrder
+所属城市 cityId
+步骤数量  transactionStepsNum
