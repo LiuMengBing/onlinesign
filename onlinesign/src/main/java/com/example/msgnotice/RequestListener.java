@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by lmb on 2018/10/18 0018.
+ * Created by liumengbing on 2018/10/18 0018.
  * 监听有没有http session，没有则创建
  */
 @WebListener

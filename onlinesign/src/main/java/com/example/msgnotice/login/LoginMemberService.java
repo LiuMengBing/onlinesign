@@ -7,4 +7,8 @@ public interface LoginMemberService {
 
 	StandardResult tishi();
 
+	String testAjaxShortPolling();
+
+	String testAjaxLongPolling();
+
 }

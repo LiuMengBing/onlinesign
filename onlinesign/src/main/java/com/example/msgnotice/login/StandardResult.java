@@ -4,8 +4,7 @@
 package com.example.msgnotice.login;
 
 /**
- * @author 
- * @version 1.0 2017年4月8日
+ * @author liumengbing
  */
 public class StandardResult{
 	

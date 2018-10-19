@@ -5,7 +5,7 @@ import org.springframework.web.context.WebApplicationContext;
 import javax.websocket.server.ServerEndpointConfig;
 
 /**
- * Created by Administrator on 2018/10/18 0018.
+ * Created by liumengbing on 2018/10/18 0018.
  */
 public class SpringEndpointConfigurator extends ServerEndpointConfig.Configurator{
 

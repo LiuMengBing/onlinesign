@@ -3,7 +3,7 @@ package com.example.msgnotice;
 import java.util.Date;
 
 /**
- * Created by lmb on 2018/10/18 0018.
+ * Created by liumengbing on 2018/10/18 0018.
  * websocket消息模型
  *
  */

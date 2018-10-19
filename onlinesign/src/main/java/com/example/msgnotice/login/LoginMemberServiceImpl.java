@@ -1,5 +1,6 @@
 package com.example.msgnotice.login;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,9 +28,44 @@ public class LoginMemberServiceImpl implements LoginMemberService{
 	public StandardResult tishi() {
 		Msg msg=new Msg();
 		msg.setToUid("ppp");
-		WSServer.pushBySys(msg);
+		//WSServer.pushBySys(msg);
 		return StandardResult.ok();
 	}
-	
+
+	@Override
+	public String testAjaxShortPolling() {
+		/**
+		 * 业务处理（查询数据库返回）
+		 *
+		 * 以消息提示为例：
+		 * 查询数据库内当前登录用户是否有未读状态的消息并返回
+		 */
+		String returnStr = "response time: " + new Date() ;
+		return returnStr;
+	}
+
+	@Override
+	public String testAjaxLongPolling() {
+		String returnStr = null;
+		try {
+			while (true) {
+				Thread.sleep(3000);
+				/**
+				 * 业务处理（查询数据库返回）
+				 *
+				 * 以消息提示为例：
+				 * 查询数据库内当前登录用户是否有未读状态的消息，
+				 * 如果有未读状态的消息则返回；
+				 * 没有则继续阻塞连接直到有未读状态的消息或者阻塞超时。
+				 */
+				returnStr = "response time: " + new Date() ;
+				break;
+			}
+		}catch(Exception e){
+			System.out.print("出现错误：" + e);
+		}
+		return returnStr;
+	}
+
 
 }

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.socket.server.standard.SpringConfigurator;
 
 /**
- * @author : lmb</br>
+ * @author : liumengbing</br>
  * @DESC : <p>注解{@link ServerEndpoint}声明websocket 服务端</p></br>
  * @date : 2017/5/25  9:43</br>
  */

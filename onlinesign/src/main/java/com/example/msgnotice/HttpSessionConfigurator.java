@@ -6,7 +6,7 @@ import javax.websocket.server.HandshakeRequest;
 import javax.websocket.server.ServerEndpointConfig;
 import javax.websocket.server.ServerEndpointConfig.Configurator;
 /**
- * Created by Administrator on 2018/10/18 0018.
+ * Created by liumengbing on 2018/10/18 0018.
  * 将http request的session存入websocket的session内
  */
 public class HttpSessionConfigurator extends Configurator{

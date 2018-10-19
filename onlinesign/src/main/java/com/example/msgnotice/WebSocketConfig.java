@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplicat
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 /**
- * Created by lmb on 2018/10/18 0018.
+ * Created by liumengbing on 2018/10/18 0018.
  */
 @ConditionalOnWebApplication
 @Configuration

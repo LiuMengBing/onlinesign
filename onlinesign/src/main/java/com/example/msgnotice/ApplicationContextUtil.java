@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Administrator on 2018/10/18 0018.
+ * Created by liumengbing on 2018/10/18 0018.
  */
 @Component
 @Lazy(false)
