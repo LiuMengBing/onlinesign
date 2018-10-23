@@ -1,5 +1,7 @@
 package com.example.configuremanager.fileHandler;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -22,11 +24,13 @@ import java.util.List;
  */
 //@RestController
 @Controller
+@Api(value = "FileHandlerController", description = "文件上传下载相关接口")
 public class FileHandlerController {
 
     private static final Logger logger = LoggerFactory.getLogger(FileHandlerController.class);
 
-    @RequestMapping(value = "/hello")
+    @RequestMapping(value = "/hello",method = RequestMethod.POST)
+    @ApiOperation("问候")
     public String hello(){
         return "pages/fileHandler.html";
     }
@@ -36,8 +40,9 @@ public class FileHandlerController {
      * @param file
      * @return
      */
-    @RequestMapping(value = "/upload")
+    @RequestMapping(value = "/upload",method = RequestMethod.POST)
     @ResponseBody
+    @ApiOperation("文件上传接口")
     public String upload(@RequestParam("test") MultipartFile file) {
         if (file.isEmpty()) {
             return "文件为空";
@@ -75,7 +80,8 @@ public class FileHandlerController {
      * @param response
      * @return
      */
-    @RequestMapping("/download")
+    @RequestMapping(value="/download",method = RequestMethod.POST)
+    @ApiOperation("文件下载接口")
     public String downloadFile(org.apache.catalina.servlet4preview.http.HttpServletRequest request, HttpServletResponse response){
         String fileName = "合同表contract.txt";
         if (fileName != null) {
@@ -137,6 +143,7 @@ public class FileHandlerController {
      */
     @RequestMapping(value = "/batch/upload", method = RequestMethod.POST)
     @ResponseBody
+    @ApiOperation("多文件上传接口")
     public String handleFileUpload(HttpServletRequest request) {
         List<MultipartFile> files = ((MultipartHttpServletRequest) request)
                 .getFiles("file");
