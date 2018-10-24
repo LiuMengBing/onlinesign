@@ -67,9 +67,9 @@ public class FileHandlerController {
             file.transferTo(dest);
             return "上传成功";
         } catch (IllegalStateException e) {
-            e.printStackTrace();
+            logger.error("IllegalStateException");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("IOException");
         }
         return "上传失败";
     }
