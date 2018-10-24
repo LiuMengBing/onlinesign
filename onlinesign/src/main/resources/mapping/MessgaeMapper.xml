@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.generator.dao.MessgaeMapper" >
+  <resultMap id="BaseResultMap" type="com.example.generator.bean.Messgae" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="msg_module" property="msgModule" jdbcType="VARCHAR" />
+    <result column="msg_type" property="msgType" jdbcType="VARCHAR" />
+    <result column="msg_content" property="msgContent" jdbcType="VARCHAR" />
+    <result column="msg_status" property="msgStatus" jdbcType="VARCHAR" />
+    <result column="send_to" property="sendTo" jdbcType="VARCHAR" />
+    <result column="send_time" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="sendor" property="sendor" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="updator" property="updator" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, msg_module, msg_type, msg_content, msg_status, send_to, send_time, sendor, update_time, 
+    updator, is_del
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from s_message
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from s_message
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.generator.bean.Messgae" >
+    insert into s_message (id, msg_module, msg_type, 
+      msg_content, msg_status, send_to, 
+      send_time, sendor, update_time, 
+      updator, is_del)
+    values (#{id,jdbcType=INTEGER}, #{msgModule,jdbcType=VARCHAR}, #{msgType,jdbcType=VARCHAR}, 
+      #{msgContent,jdbcType=VARCHAR}, #{msgStatus,jdbcType=VARCHAR}, #{sendTo,jdbcType=VARCHAR}, 
+      #{sendTime,jdbcType=TIMESTAMP}, #{sendor,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updator,jdbcType=VARCHAR}, #{isDel,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.generator.bean.Messgae" >
+    insert into s_message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="msgModule != null" >
+        msg_module,
+      </if>
+      <if test="msgType != null" >
+        msg_type,
+      </if>
+      <if test="msgContent != null" >
+        msg_content,
+      </if>
+      <if test="msgStatus != null" >
+        msg_status,
+      </if>
+      <if test="sendTo != null" >
+        send_to,
+      </if>
+      <if test="sendTime != null" >
+        send_time,
+      </if>
+      <if test="sendor != null" >
+        sendor,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updator != null" >
+        updator,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="msgModule != null" >
+        #{msgModule,jdbcType=VARCHAR},
+      </if>
+      <if test="msgType != null" >
+        #{msgType,jdbcType=VARCHAR},
+      </if>
+      <if test="msgContent != null" >
+        #{msgContent,jdbcType=VARCHAR},
+      </if>
+      <if test="msgStatus != null" >
+        #{msgStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTo != null" >
+        #{sendTo,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendor != null" >
+        #{sendor,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updator != null" >
+        #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.generator.bean.Messgae" >
+    update s_message
+    <set >
+      <if test="msgModule != null" >
+        msg_module = #{msgModule,jdbcType=VARCHAR},
+      </if>
+      <if test="msgType != null" >
+        msg_type = #{msgType,jdbcType=VARCHAR},
+      </if>
+      <if test="msgContent != null" >
+        msg_content = #{msgContent,jdbcType=VARCHAR},
+      </if>
+      <if test="msgStatus != null" >
+        msg_status = #{msgStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTo != null" >
+        send_to = #{sendTo,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTime != null" >
+        send_time = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendor != null" >
+        sendor = #{sendor,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updator != null" >
+        updator = #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.generator.bean.Messgae" >
+    update s_message
+    set msg_module = #{msgModule,jdbcType=VARCHAR},
+      msg_type = #{msgType,jdbcType=VARCHAR},
+      msg_content = #{msgContent,jdbcType=VARCHAR},
+      msg_status = #{msgStatus,jdbcType=VARCHAR},
+      send_to = #{sendTo,jdbcType=VARCHAR},
+      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      sendor = #{sendor,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      updator = #{updator,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
