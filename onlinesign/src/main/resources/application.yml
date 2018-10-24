@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://192.168.1.224:3306/qianyue?useSSL=false&serverTimezone=CTT
+    url: jdbc:mysql://192.168.1.183:3306/lmblocaldatabase?useSSL=false&serverTimezone=CTT
     username: root
     password: gitlab123456
     type: com.alibaba.druid.pool.DruidDataSource
