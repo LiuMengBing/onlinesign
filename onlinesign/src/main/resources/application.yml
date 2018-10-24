@@ -22,3 +22,14 @@ mybatis:
     call-setters-on-nulls: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapperLocations: classpath:mapper/**/*Mapper.xml
+
+logging:
+  #会在项目下的logs文件夹下生成my.log文件
+  file: ./logs/my.log
+  #会在D:/mylog/会在该目录下创建文件，并写入日志内容
+  path: D:/mylog/
+  #日志级别控制示例
+  level:
+    org.springframework.web: debug
+    #logstash日志管理和分析
+  #logstash-host: 127.0.0.1:4561
