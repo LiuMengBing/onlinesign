@@ -161,4 +161,9 @@
       is_del = #{isDel,jdbcType=TINYINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectMsgList" parameterType="com.example.configuremanager.pagehelper.bean.SelectMsgList" resultType="map">
+    select id,msg_module,msg_type,msg_content,msg_status,send_time
+    from s_message
+  </select>
 </mapper>
