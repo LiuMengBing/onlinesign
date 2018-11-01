@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.generator.dao.MessgaeMapper" >
-  <resultMap id="BaseResultMap" type="com.example.configuremanager.pagehelper.bean.Messgae" >
+<mapper namespace="com.example.configuremanager.pagehelper.dao.MessageMapper" >
+  <resultMap id="BaseResultMap" type="com.example.configuremanager.pagehelper.bean.Message" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="msg_module" property="msgModule" jdbcType="VARCHAR" />
     <result column="msg_type" property="msgType" jdbcType="VARCHAR" />
@@ -15,11 +15,11 @@
     <result column="is_del" property="isDel" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, msg_module, msg_type, msg_content, msg_status, send_to, send_time, sendor, update_time, 
+    id, msg_module, msg_type, msg_content, msg_status, send_to, send_time, sendor, update_time,
     updator, is_del
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from s_message
     where id = #{id,jdbcType=INTEGER}
@@ -28,17 +28,17 @@
     delete from s_message
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.generator.bean.Messgae" >
-    insert into s_message (id, msg_module, msg_type, 
-      msg_content, msg_status, send_to, 
-      send_time, sendor, update_time, 
+  <insert id="insert" parameterType="com.example.configuremanager.pagehelper.bean.Message" >
+    insert into s_message (id, msg_module, msg_type,
+      msg_content, msg_status, send_to,
+      send_time, sendor, update_time,
       updator, is_del)
-    values (#{id,jdbcType=INTEGER}, #{msgModule,jdbcType=VARCHAR}, #{msgType,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{msgModule,jdbcType=VARCHAR}, #{msgType,jdbcType=VARCHAR},
       #{msgContent,jdbcType=VARCHAR}, #{msgStatus,jdbcType=INTEGER}, #{sendTo,jdbcType=VARCHAR},
-      #{sendTime,jdbcType=TIMESTAMP}, #{sendor,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{sendTime,jdbcType=TIMESTAMP}, #{sendor,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP},
       #{updator,jdbcType=VARCHAR}, #{isDel,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.generator.bean.Messgae" >
+  <insert id="insertSelective" parameterType="com.example.configuremanager.pagehelper.bean.Message" >
     insert into s_message
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.generator.bean.Messgae" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.configuremanager.pagehelper.bean.Message" >
     update s_message
     <set >
       <if test="msgModule != null" >
@@ -147,7 +147,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.generator.bean.Messgae" >
+  <update id="updateByPrimaryKey" parameterType="com.example.configuremanager.pagehelper.bean.Message" >
     update s_message
     set msg_module = #{msgModule,jdbcType=VARCHAR},
       msg_type = #{msgType,jdbcType=VARCHAR},

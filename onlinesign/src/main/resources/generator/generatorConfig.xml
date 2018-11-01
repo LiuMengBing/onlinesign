@@ -38,7 +38,7 @@
         </javaClientGenerator>
 
         <!--生成对应表及类名-->
-        <table tableName="s_message" domainObjectName="Messgae" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="b_trans_steps_type" domainObjectName="TransStepsType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
     </context>
 </generatorConfiguration>

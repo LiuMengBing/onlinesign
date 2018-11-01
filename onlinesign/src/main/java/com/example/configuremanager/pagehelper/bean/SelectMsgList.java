@@ -11,7 +11,7 @@ public class SelectMsgList {
 
     private String msgContent;
 
-    private String msgStatus;
+    private Integer msgStatus;
 
     private Date sendTime;
 
@@ -75,12 +75,11 @@ public class SelectMsgList {
         this.msgContent = msgContent == null ? null : msgContent.trim();
     }
 
-    public String getMsgStatus() {
+    public Integer getMsgStatus() {
         return msgStatus;
     }
 
-    public void setMsgStatus(String msgStatus) {
-        this.msgStatus = msgStatus == null ? null : msgStatus.trim();
+    public void setMsgStatus(Integer msgStatus) {
+        this.msgStatus = msgStatus;
     }
-
 }
