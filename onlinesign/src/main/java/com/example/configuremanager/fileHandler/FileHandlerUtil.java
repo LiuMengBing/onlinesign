@@ -24,10 +24,10 @@ import java.util.List;
  */
 //@RestController
 @Controller
-@Api(value = "FileHandlerController", description = "文件上传下载相关接口")
-public class FileHandlerController {
+@Api(value = "FileHandlerUtil", description = "文件上传下载相关工具接口")
+public class FileHandlerUtil {
 
-    private static final Logger logger = LoggerFactory.getLogger(FileHandlerController.class);
+    private static final Logger logger = LoggerFactory.getLogger(FileHandlerUtil.class);
 
     @RequestMapping(value = "/hello",method = RequestMethod.POST)
     @ApiOperation("问候")
