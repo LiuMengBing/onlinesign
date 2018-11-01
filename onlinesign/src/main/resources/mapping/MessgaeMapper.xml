@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.generator.dao.MessgaeMapper" >
-  <resultMap id="BaseResultMap" type="com.example.generator.bean.Messgae" >
+  <resultMap id="BaseResultMap" type="com.example.configuremanager.pagehelper.bean.Messgae" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="msg_module" property="msgModule" jdbcType="VARCHAR" />
     <result column="msg_type" property="msgType" jdbcType="VARCHAR" />
     <result column="msg_content" property="msgContent" jdbcType="VARCHAR" />
-    <result column="msg_status" property="msgStatus" jdbcType="VARCHAR" />
+    <result column="msg_status" property="msgStatus" jdbcType="INTEGER" />
     <result column="send_to" property="sendTo" jdbcType="VARCHAR" />
     <result column="send_time" property="sendTime" jdbcType="TIMESTAMP" />
     <result column="sendor" property="sendor" jdbcType="VARCHAR" />
@@ -34,7 +34,7 @@
       send_time, sendor, update_time, 
       updator, is_del)
     values (#{id,jdbcType=INTEGER}, #{msgModule,jdbcType=VARCHAR}, #{msgType,jdbcType=VARCHAR}, 
-      #{msgContent,jdbcType=VARCHAR}, #{msgStatus,jdbcType=VARCHAR}, #{sendTo,jdbcType=VARCHAR}, 
+      #{msgContent,jdbcType=VARCHAR}, #{msgStatus,jdbcType=INTEGER}, #{sendTo,jdbcType=VARCHAR},
       #{sendTime,jdbcType=TIMESTAMP}, #{sendor,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{updator,jdbcType=VARCHAR}, #{isDel,jdbcType=TINYINT})
   </insert>
@@ -89,7 +89,7 @@
         #{msgContent,jdbcType=VARCHAR},
       </if>
       <if test="msgStatus != null" >
-        #{msgStatus,jdbcType=VARCHAR},
+        #{msgStatus,jdbcType=INTEGER},
       </if>
       <if test="sendTo != null" >
         #{sendTo,jdbcType=VARCHAR},
@@ -124,7 +124,7 @@
         msg_content = #{msgContent,jdbcType=VARCHAR},
       </if>
       <if test="msgStatus != null" >
-        msg_status = #{msgStatus,jdbcType=VARCHAR},
+        msg_status = #{msgStatus,jdbcType=INTEGER},
       </if>
       <if test="sendTo != null" >
         send_to = #{sendTo,jdbcType=VARCHAR},
@@ -152,7 +152,7 @@
     set msg_module = #{msgModule,jdbcType=VARCHAR},
       msg_type = #{msgType,jdbcType=VARCHAR},
       msg_content = #{msgContent,jdbcType=VARCHAR},
-      msg_status = #{msgStatus,jdbcType=VARCHAR},
+      msg_status = #{msgStatus,jdbcType=INTEGER},
       send_to = #{sendTo,jdbcType=VARCHAR},
       send_time = #{sendTime,jdbcType=TIMESTAMP},
       sendor = #{sendor,jdbcType=VARCHAR},

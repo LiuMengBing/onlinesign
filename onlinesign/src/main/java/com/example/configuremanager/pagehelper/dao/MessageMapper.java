@@ -1,5 +1,6 @@
 package com.example.configuremanager.pagehelper.dao;
 
+import com.example.configuremanager.pagehelper.bean.Message;
 import com.example.configuremanager.pagehelper.bean.SelectMsgList;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface MessageMapper {
      * @return
      */
     List<SelectMsgList> selectList(SelectMsgList msg);
+
+    int insertSelective(Message record);
 }

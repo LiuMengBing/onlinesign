@@ -1,8 +1,15 @@
-package com.example.generator.bean;
+package com.example.configuremanager.pagehelper.bean;
 
+import com.example.configuremanager.pagehelper.bean.enums.MsgStatus;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class Messgae {
+/**
+ * 消息表实体类 s_message
+ * Created by liumengbing on 2018/10/25.
+ */
+public class Message implements Serializable{
     private Integer id;
 
     private String msgModule;
@@ -11,7 +18,7 @@ public class Messgae {
 
     private String msgContent;
 
-    private String msgStatus;
+    private Integer msgStatus;
 
     private String sendTo;
 
@@ -23,7 +30,7 @@ public class Messgae {
 
     private String updator;
 
-    private Byte isDel;
+    private int isDel;//是否删除（0否 1是）
 
     public Integer getId() {
         return id;
@@ -57,12 +64,12 @@ public class Messgae {
         this.msgContent = msgContent == null ? null : msgContent.trim();
     }
 
-    public String getMsgStatus() {
+    public Integer getMsgStatus() {
         return msgStatus;
     }
 
-    public void setMsgStatus(String msgStatus) {
-        this.msgStatus = msgStatus == null ? null : msgStatus.trim();
+    public void setMsgStatus(Integer msgStatus) {
+        this.msgStatus = msgStatus;
     }
 
     public String getSendTo() {
@@ -105,11 +112,11 @@ public class Messgae {
         this.updator = updator == null ? null : updator.trim();
     }
 
-    public Byte getIsDel() {
+    public int getIsDel() {
         return isDel;
     }
 
-    public void setIsDel(Byte isDel) {
+    public void setIsDel(int isDel) {
         this.isDel = isDel;
     }
 }

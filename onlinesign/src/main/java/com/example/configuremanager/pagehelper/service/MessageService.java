@@ -1,5 +1,6 @@
 package com.example.configuremanager.pagehelper.service;
 
+import com.example.configuremanager.pagehelper.bean.Message;
 import com.example.configuremanager.pagehelper.bean.SelectMsgList;
 
 import java.util.List;
@@ -10,6 +11,8 @@ import java.util.List;
 public interface MessageService {
 
     List<SelectMsgList> selectList(SelectMsgList msg);
+
+    int insertMsg(Message msg);
 
 }
 
