@@ -1,7 +1,5 @@
 package com.example.configuremanager.pagehelper.bean;
 
-import com.example.configuremanager.pagehelper.bean.enums.MsgStatus;
-
 import java.io.Serializable;
 import java.util.Date;
 
