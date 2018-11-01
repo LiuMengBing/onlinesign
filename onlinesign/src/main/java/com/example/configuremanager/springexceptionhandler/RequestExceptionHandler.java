@@ -1,6 +1,8 @@
-package com.example.common.exception;
+package com.example.configuremanager.springexceptionhandler;
 
 import com.example.common.ResponseModel;
+import com.example.configuremanager.springexceptionhandler.exception.BizException;
+import com.example.configuremanager.springexceptionhandler.exception.CustomException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;

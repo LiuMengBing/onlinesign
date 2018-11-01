@@ -1,4 +1,4 @@
-package com.example.common.exception;
+package com.example.configuremanager.springexceptionhandler.exception;
 
 /**
  * 自定义异常,抛出后被全局捕获返回前端

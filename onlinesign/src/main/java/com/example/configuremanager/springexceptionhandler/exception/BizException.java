@@ -1,4 +1,4 @@
-package com.example.common.exception;
+package com.example.configuremanager.springexceptionhandler.exception;
 
 /**
  * <p>

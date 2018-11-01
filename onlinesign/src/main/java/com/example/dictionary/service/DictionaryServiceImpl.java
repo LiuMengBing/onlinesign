@@ -1,6 +1,6 @@
 package com.example.dictionary.service;
 
-import com.example.common.exception.CustomException;
+import com.example.configuremanager.springexceptionhandler.exception.CustomException;
 import com.example.dictionary.bean.Dictionary;
 import com.example.dictionary.bean.DictionaryTree;
 import com.example.dictionary.bean.form.AddDictionaryForm;

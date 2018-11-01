@@ -1,7 +1,7 @@
-package com.example.configuremanager.springexceptionhandler;
+package com.example.configuremanager.springexceptionhandler.exception;
 
-import com.example.common.exception.BizException;
-import com.example.common.exception.CustomException;
+import com.example.configuremanager.springexceptionhandler.exception.BizException;
+import com.example.configuremanager.springexceptionhandler.exception.CustomException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PathVariable;
