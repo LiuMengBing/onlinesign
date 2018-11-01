@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dictionary.dao.DictionaryMapper">
+    <resultMap id="BaseResultMap" type="com.example.dictionary.bean.Dictionary">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+        <result column="key" jdbcType="INTEGER" property="key" />
+        <result column="value" jdbcType="VARCHAR" property="value" />
+        <result column="sort" jdbcType="INTEGER" property="sort" />
+        <result column="note" jdbcType="VARCHAR" property="note" />
+        <result column="readonly" jdbcType="VARCHAR" property="readonly" />
+        <result column="is_del" jdbcType="BIT" property="isDel" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    </resultMap>
+
+    <!--新增字典及字典项 -->
+    <insert id="insert" parameterType="com.example.dictionary.bean.Dictionary">
+      insert into s_dictionary(parent_id,`key`,`value`,sort,
+        <if test="note !=null and note.trim().length >0">note,</if>
+        is_del,create_by,update_by)values(
+        #{parentId,jdbcType=INTEGER},#{key,jdbcType=INTEGER},
+        #{value,jdbcType=VARCHAR},#{sort,jdbcType=INTEGER},
+        <if test="note !=null and note.trim().length >0">note = #{note,jdbcType=VARCHAR},</if>
+        0,#{createBy,jdbcType=VARCHAR},#{updateBy,jdbcType=VARCHAR})
+    </insert>
+
+    <!--查询字典及字典项信息 -->
+    <select id="selectByPrimaryKey" resultType="com.example.dictionary.bean.Dictionary">
+      select id,parent_id,`key`,`value`,sort,note,readonly from s_dictionary
+        where id = #{id} and is_del = 0 group by sort asc
+    </select>
+
+    <!--修改字典及字典项 -->
+    <update id="updateByPrimaryKey" parameterType="com.example.dictionary.bean.Dictionary">
+      update s_dictionary set
+        `value` = #{value},
+        sort = #{sort},
+        is_del = #{isDel},
+        <if test="note !=null and note.trim().length >0">note = #{note},</if>
+        update_by = #{updateBy}
+        where id = #{id}
+    </update>
+
+    <!--查询所有的字典及字典项 -->
+    <select id="selectByParentId" resultMap="BaseResultMap">
+      select id,parent_id,`key`,`value`,sort,note from s_dictionary
+        where parent_id = #{parentId,jdbcType=INTEGER} and is_del = 0
+        order by sort asc
+    </select>
+
+    <!--查询所有的字典及字典项 -->
+    <select id="selectAll" resultMap="BaseResultMap">
+      select id,parent_id,`key`,`value`,sort,note,readonly from s_dictionary
+        where is_del = 0 order by id,sort asc
+    </select>
+
+    <!--查找key最大的字典项 -->
+    <select id="selectOneByParentId" resultType="com.example.dictionary.bean.Dictionary">
+      select id,parent_id,`key`,`value`,sort,note,readonly from s_dictionary
+        where parent_id = #{parentId} order by `key` desc limit 1
+    </select>
+</mapper>
